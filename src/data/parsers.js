@@ -14,6 +14,33 @@ function stateStats(state, data) {
   return parseStats(stateRawData);
 }
 
+function historicUs(historicData) {
+ 
+    parseHistoric(historicData);
+   
+}
+
+function parseHistoric(historicData) {
+
+}
+
+
+function parseChart(historicData, key, label, color) {
+    const chartData = historicData.map(data => {
+        return {
+            x: moment(data.date, 'YYYYMMDD'),
+            y: data[key] || 0,
+        }
+    });
+    return {
+        label,
+        data: chartData,
+        fill: false,
+        borderColor: color,
+    }
+}
+
+
 function parseStats(rawStats) {
 
     return{
@@ -35,5 +62,7 @@ function parseStats(rawStats) {
 
 
 export default {
-    usStats, stateStats
+    usStats, 
+    stateStats,
+    historicUs,
 };

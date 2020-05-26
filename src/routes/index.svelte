@@ -5,8 +5,9 @@ export async function preload() {
  try {
      
   const usStats = await requests.usStats();
+  const historic = await requests.historicUs();
 
-  return { usStats};
+  return { usStats, historic};
  } catch(e) {
    
  }
@@ -22,6 +23,7 @@ import CovidChart from '../components/CovidChart.svelte'
 import TableContainer from '../components/TableContainer.svelte'
 
 export let usStats;
+export let historic;
 console.log(usStats, 'usStats');
 
 
