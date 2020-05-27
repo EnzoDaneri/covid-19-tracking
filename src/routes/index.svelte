@@ -7,7 +7,6 @@
       const statesData = await requests.statesData();
       return { usStats, historic, statesData };
     } catch (e) {
-      console.log(e);
       this.error(
         500,
         "There was an error in calling the api, please try again in 5 minutes."
@@ -24,8 +23,7 @@
   export let usStats;
   export let historic;
   export let statesData;
-  console.log(historic, "historic");
-  console.log(usStats, "usStats");
+ 
 </script>
 
 <svelte:head>
